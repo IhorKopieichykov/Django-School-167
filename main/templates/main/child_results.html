@@ -1,0 +1,42 @@
+{% extends 'main/user.html' %}
+{% load static %}
+
+{% block user_results-of-test %}
+    <div class="user_results-of-test">
+        <h3 class="results-of-test_title">Результати тестувань</h3>
+        <table class="results-of-test_table user_table_res">
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname" style="font-weight: bold;">Кількість правильних відповідей</span>
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname" style="font-weight: bold;">Кількість неправильних відповідей</span>
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname" style="font-weight: bold;">Результат тестування</span>
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname" style="font-weight: bold;">Дата тестування</span>
+                    </td>
+            {% for result in results %}
+                <tr class="user_table_res_row">
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname">{{ result.right_answers }}</span>
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname">{{ result.wrong_answers }}</span>
+                    </td>
+                    <td class="user_table_res_cell">
+                        {% if result.success %}
+                            <span class="table_res_childname" style="color: #45ac75;">Тестування пройдено</span>
+                        {% else %}
+                            <span class="table_res_childname" style="color: #ff2626;">Тестування не пройдено</span>
+                        {% endif %}
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname">{{ result.datetime }}</span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock user_results-of-test %}

@@ -1,0 +1,31 @@
+{% extends 'main/user.html' %}
+{% load static %}
+
+{% block user_results-of-test %}
+    <div class="user_results-of-test">
+        {% for user in users %}
+                 <h3 class="results-of-test_title">{{ user.get_full_name }}</h3>
+        {% endfor %}
+        <h3 class="results-of-test_title">Діти</h3>
+        <table class="results-of-test_table user_table_res">
+                <tr class="user_table_res_row">
+                    <td class="user_table_res_cell">
+                       <span class="table_res_childname" style="font-weight: bold;">Ім'я дитини</span>
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname" style="font-weight: bold;">Дата народження</span>
+                    </td>
+                </tr>
+            {% for child in childs %}
+                <tr class="user_table_res_row">
+                    <td class="user_table_res_cell">
+                        <a href="{% url 'user_child_results' user_id child.pk %}" class="table_res_childname">{{ child.childname }}</a>
+                    </td>
+                    <td class="user_table_res_cell">
+                        <span class="table_res_childname">{{ child.date_of_birth }}</span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock user_results-of-test %}

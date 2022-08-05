@@ -1,0 +1,114 @@
+/* -------------- SLIDER----------------------------- */
+
+.slider {    
+    padding: 20px;
+}
+@media (max-width:992px) {
+    .slider {    
+        padding: 10px;
+    }
+}
+.slider_window {    
+    overflow: hidden;        
+    width: 60%;  
+    margin: 0 auto;
+    position: relative;
+}
+@media (max-width:992px) {
+    .slider_window{
+        width: 80%;
+    }
+}
+@media (max-width:767px) {
+    .slider_window{
+        width: 100%;
+    }
+}
+.slider_track{
+    display: flex;
+    transition: all 1s ease;
+}
+.slider_image {   
+    /* width: 100%;
+    height: auto;  */
+}
+.slider_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;        
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.slider_buttons button{
+    font-size: 100px;
+    color: #c0c1c2bf;
+    background: transparent;
+    height: 100%;
+    width: 12%;    
+    vertical-align: center;
+}
+@media (max-width:992px) {
+    .slider_buttons button{
+        font-size: 70px;        
+    }
+}
+@media (max-width:767px) {
+    .slider_buttons button{
+        font-size: 40px;        
+    }
+}
+.slider_buttons button:hover{ 
+    background-color: #c0c1c249;
+    color: rgba(255, 255, 255, 0.877);
+    cursor: pointer;
+    height: 100%;
+}
+@media (max-width:992px) {
+    .slider_buttons button:hover{         
+        color: #c0c1c249;   
+        background: transparent;
+    }
+}
+.slider_buttons button:active{  
+    background-color: #c0c1c249;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+.slider_button_prev {
+    
+}
+.slider_button_next {
+    
+}
+.slider_indicator {
+    position: relative;
+    background-color: #0000008d;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.slider_indicator_dot {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+    border: 1px #45ac75 solid;
+    
+}
+.slider_indicator_dot:last-child{
+    margin: 0;
+}
+.slider_indicator_dot.active{
+    position: absolute;
+    left: 5px;
+    background-color: #45ac75;
+    transition: all 1s ease;
+}

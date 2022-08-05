@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic&display=swap" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/zeroing.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/container.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/header.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/main.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/main_info_block.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/main_welcome_block_black.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/test.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/slider.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/footer.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/login.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'main/css/user.css' %}" />
+        {% block style %}{% endblock style %}
+
+        <link rel="shortcut icon" href="{% static 'main/images/header/favicon.ico' %}" type="image/png" />
+    {% block title %}
+        <title>{{ title }} - ХЗОШ №167</title>
+    {% endblock title %}
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <div class="header_container _container">
+                    <div class="header_logo_title">
+                        <div class="header_logo">
+                            <a href="{% url 'main' %}"><img class="logo_img" src="{% static 'main/images/header/logo.png' %}" alt="Logo"></a>
+                        </div>
+                        <div class="header_title" id="h_title_1">
+                            Харківська загальноосвітня школа І-ІІІ ступенів № 167 Харківської міської ради Харківської області
+                        </div>
+                        <div class="header_title" id="h_title_2">
+                            Хзош І-ІІІ ступенів № 167 Харківської міської ради Харківської області
+                        </div>
+                        <div class="header_title" id="h_title_3">
+                            Хзош І-ІІІ ступенів № 167
+                        </div>
+                        <div class="header_user-block">
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'user' %}" class="user-block_user_link">
+                                    <img src="{% static 'main/images/header/user.png' %}" alt="" class="user_icon">
+                                    <div class="logo_user_name">{{ user.get_full_name }}</div>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'user' %}" class="user-block_user_link">
+                                    <img src="{% static 'main/images/header/unlogin_user.png' %}" alt="" class="user_icon">
+                                    <div class="logo_user_name">Вхід</div>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="header_navigation">
+
+
+                        {% block navigation %}
+                            <div class="header_navigation__menu menu">
+                                <button class="menu__dropbutton">Меню</button>
+                                <ul class="menu__nav_items">
+                                    {% for key, value in nav.items %}
+                                        {% if key == title %}
+                                            <li class="nav_item"><span class="nav_a active">{{ key }}</span></li>
+                                        {% else %}
+                                            <li class="nav_item"><a href="{{ value }}" class="nav_a">{{ key }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <ul class="main_nav">
+                            {% for key, value in nav.items %}
+                                {% if key == title %}
+                                    <li class="nav_item"><span class="nav_a active">{{ key }}</span></li>
+                                {% else %}
+                                    <li class="nav_item"><a href="{{ value }}" class="nav_a">{{ key }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                        {% endblock navigation %}
+
+
+
+                    </div>
+                </div>
+            </header>
+
+            <main class="main">
+                {% block main_page_content %}
+                {% endblock main_page_content %}
+            </main>
+
+            <footer class="footer">
+                <div class="footer__content _container">
+                    <div class="footer__item">
+                        <h3 class="footer__item_title">
+                            Наша адреса
+                        </h3>
+                        <div class="footer__item_content">
+                            Україна, 61121, м. Харків, вулиця Гарібальді, буд. 9
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <h3 class="footer__item_title">
+                            Ми на Google Maps
+                        </h3>
+                        <div class="footer__item_content">
+                            <iframe class="footer__item_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.2859878291238!2d36.35091461559878!3d50.00599467941659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412709eb013cc067%3A0x9b9f21d70870f9b9!2z0KXQsNGA0YzQutC-0LLRgdC60LDRjyDQvtCx0YnQtdC-0LHRgNCw0LfQvtCy0LDRgtC10LvRjNC90LDRjyDRiNC60L7Qu9CwIOKEliAxNjc!5e0!3m2!1sru!2sua!4v1647260131976!5m2!1sru!2sua" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <h3 class="footer__item_title">
+                            Контакти
+                        </h3>
+                        <div class="footer__item_content">
+                            <table class="footer__table">
+                                <tr>
+                                    <td class="footer__table_first_column"><img src="{% static 'main/images/footer/contacts/phone.png' %}" alt="phone" class="footer__table_icon" style="border: 1px solid #45ac75 ; background-color: #fff;"></td>
+                                    <td class="footer__table_second_column"><a class="footer__table_link" href="tel:(057)725-16-41">(057)725-16-41</a><br><a class="footer__table_link" href="tel:(057)725-15-33">(057)725-15-33</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="footer__table_first_column"><img src="{% static 'main/images/footer/contacts/instagram.png' %}" alt="insta" class="footer__table_icon"></td>
+                                    <td class="footer__table_second_column"><a href="" class="footer__table_link">school167</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="footer__table_first_column"><img src="{% static 'main/images/footer/contacts/FaceBook.png' %}" alt="facebook" class="footer__table_icon"></td>
+                                    <td class="footer__table_second_column"><a href="" class="footer__table_link">school167</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <h3 class="footer__item_title">
+                            Відгуки та побажання
+                        </h3>
+                        <div class="footer__item_content">
+                            <form class="footer__item_feedback feedback" action="">
+                                <span class="feedback__title">Ваше ім'я</span>
+
+                                <input type="text" class="feedback__name" pattern="^[А-Яа-яЁёІіЇїЄє\s]+$" placeholder="Введіть ім'я" title="Тільки букви українського алфавіту!" required>
+
+                                <span class="feedback__title">Ваш e-mail</span>
+
+                                <input type="text" class="feedback__email" placeholder="Введіть e-mail" required>
+
+                                <span class="feedback__title">Ваш відгук або побажання</span>
+
+                                <textarea name="feedback" cols="30" rows="5" class="feedback__textarea" placeholder="Напишіть ваш відгук..." required pattern="^[А-Яа-яЁёІіЇїЄє\s]+$" title="Тільки букви українського алфавіту!"></textarea>
+
+                                <button type="submit" class="feedback__button">Відправити</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+
+
+        <script src="{% static 'main/js/dropdown_menu.js' %}" type="text/javascript"></script>
+        {% block script %}
+        {% endblock script %}
+    </body>
+</html>

@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block main_page_content %}
+    <div class="main__pagename _container">
+                    <h1 class="main__pagename-title">Попереднє тестування для вступу до школи</h1>
+                    <p class="main__pagename-text article__text"><em>Як дізнатися самостійно, без допомоги фахівця, чи готова дитина до школи? В цьому допоможе тестування, створене нашими викладачами початкових класів та затверджене Міністерством освіти, яке Ви разом зі своєю дитиною можете пройти прямо зараз та дізнатися рівень готовності для вступу до нашої школи. Бажаємо успіхів!</em></p>
+                </div>
+
+                <div class="main__info-block info-block">
+                    <div class="info-block__page_content page_content _container">
+
+                        <div class="test_container">
+                            <form class="form_1" id="form_1" method="post" action="{% url 'test' %}">
+
+                            <!--onsubmit="return false;" - не обновлять страницу, вставлять в тег <form>-->
+
+                                <div class="cont visible">
+                                    <h3 class="cont-title">Знайомство</h3>
+
+                                    <p class="cont-text"><em>Введіть будь-ласка ім'я, дату народження та вік дитини</em></p>
+
+                                    <input class="cont__child-name" placeholder="Ім'я дитини" type="text" name="child_name" id="child_name" value="" required pattern="[А-Яа-яЁёІіЇїЄє]{2,20}">
+                                    <span id="name_text" style="color: red;"></span>
+                                    <br>
+                                    <input class="cont__child-name" type="date" name="child_date" id="child_date">
+                                    <br>
+                                    <input class="cont__child-name" placeholder="Вік дитини" type="number" min="0" name="child_age" id="child_age">
+
+
+                                </div>
+
+                                  <div class="q-indicator"></div>
+                                  <div class="questions invisible"></div>
+
+
+                                  <div class="btns">
+                                    <button class="invisible" type="button" name="back" id="back">Назад</button>
+                                    <button class="visible" type="reset" name="reset" id="reset">Очистити</button>
+                                    <button class="visible" type="button" name="next" id="start">Почати тестування</button>
+                                    <button class="invisible disabled" type="button" name="next" id="next" disabled>Продовжити</button>
+                                    <button class="invisible" onclick="showResults()" type="button" name="submit" id="submit">Показати результати</button>
+                              </div>
+
+
+
+                                <div class="results invisible" >
+                                    <h3 class="results__title">Результати тестування</h3>
+                                    <table class="results__table">
+                                      <tr>
+                                        <td class="results__table_right">Правильних відповідей: </td>
+                                        <td >
+                                            <span id="right"></span>
+                                            <input id="right_answers" type="hidden" name="right_answers">
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="results__table_wrong">Неправильних відповідей: </td>
+                                        <td >
+                                            <span id="wrong"></span>
+                                            <input id="wrong_answers" type="hidden" name="wrong_answers">
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p class="result"></p>
+                                    <button id="restart" type="submit" form="form_1">Зберегти результати</button>
+                                </div>
+                            </form>
+
+
+{#                            <div class="prev_results invisible">#}
+{#                              <h3 class="prev_results_title" style="text-align: center;">Результати останнього попереднього тестування</h3>#}
+{#                              <table class=rev_results_table">#}
+{#                                <thead>#}
+{#                                          <td>Ім'я дитини</td>#}
+{#                                          <td>Правильних відповідей</td>#}
+{#                                          <td>Неправильних відповідей</td>#}
+{#                                          <td>Результат</td>#}
+{#                                      </thead>#}
+{#                              </table>#}
+{#                            </div>#}
+                          </div>
+                    </div>
+                </div>
+{% endblock main_page_content %}
+
+{% block script %}
+    <script src="{% static 'main/js/test.js' %}" type="text/javascript"></script>
+{% endblock script %}

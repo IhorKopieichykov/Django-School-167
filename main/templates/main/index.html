@@ -1,0 +1,87 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block main_page_content %}
+                <div class="main__welcome-block welcome-block welcome-block__black">
+                    <div class="welcome-block _container">
+
+
+                        <div class="welcome-block__image">
+                            <img class="welcome-block__photo" src="{% static 'main/images/main/index/welcome-block/round.png' %}" alt="round">
+                        </div>
+
+                        <div class="welcome-block__text">
+                            <h1 class="welcome-block__title">ЛАСКАВО ПРОСИМО</h1>
+                            <p class="welcome-block__title-end">на головну сторінку нашої школи!</p>
+                            <a class="welcome-block__title-link" href="#table">Дізнатися більше</a>
+                        </div>
+
+                        <div class="welcome-block__images">
+                            <img class="welcome-block__shape_1" src="{% static 'main/images/main/index/welcome-block/shape.png' %}" alt="shape_1">
+                            <img class="welcome-block__shape_2" src="{% static 'main/images/main/index/welcome-block/shape.png' %}" alt="shape_2">
+                        </div>
+                    </div>
+                </div>
+                <div class="main__info-block info-block">
+                    <div class="info-block__page_content page_content _container">
+                        <div class="page_content__stat stat" id="table">
+                            <div class="stat__title">
+                                <h2>Цікаві факти про школу
+                                    на 2021/2022 навчальний рік</h2>
+                            </div>
+                            <table class="stat__table">
+                                <tr>
+                                    <td class="stat__table_first-column">Рік заснування школи</td>
+                                    <td class="stat__table_second-column">1990</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Проектна потужність</td>
+                                    <td class="stat__table_second-column">1176</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Кількість учнів</td>
+                                    <td class="stat__table_second-column">1113</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Профільне навчання</td>
+                                    <td class="stat__table_second-column">Профіль української філології (філологічний напрям)</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Профільні класи</td>
+                                    <td class="stat__table_second-column">10-А,10-Б, 11-А, 11-Б клас</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div class="page_content__article article">
+                            <article class="article">
+                                <h2 class="article__title">
+                                    Затверджені нові протиепідемічні заходи для закладів освіти
+                                </h2>
+                                <p class="article__text">
+                                    <img src="{% static 'main/images/main/index/info-block/article/cat_in_mask.jpg' %}" alt="cat" class="article__image">
+                                    Міністерством охорони здоров'я затверджені нові протиепідемічні заходи у закладах освіти на період карантину у зв'язку поширенням COVID-19. Відповідну постанову підписано головним державним санітарним лікарем України Віктором Ляшко. Документом визначені обов'язки суб'єктів, що відповідають за влаштування та утримання закладів освіти, з урахуванням необхідності забезпечення належних протиепідемічних заходів, спрямованих на запобігання ускладнення епідемічної ситуації. Дія документа поширюється на заклади позашкільної, загальної середньої, професійної, фахової передвищої та вищої освіти. Нова редакція постанови щодо організації протиепідемічних заходів у закладах освіти містить вимоги щодо організації освітнього процесу, покладених на керівників та працівників закладів освіти в період карантину. Окрім того, документом визначено вимоги до організації харчування в закладах освіти, вимоги до транспорту, який перевозить дітей та працівників, а також вимоги до поводження з використаними засобами індивідуального захисту. Попередня постанова МОЗ про протиепідемічні заходи у закладах освіти, що була ухвалена напередодні початку навчального року, визнана такою, що втратила чинність.
+                                </p>
+                            </article>
+                            <article class="article">
+                                <h2 class="article__title">
+                                    Шановні батьки!
+                                </h2>
+
+                                <p class="article__text">
+                                    <img src="{% static 'main/images/main/index/info-block/article/cat-in-medical-mask-on-quarantine-at-home_102583-2223 (1).jpg' %}" alt="cat" class="article__image">
+                                    Адміністрація школи, педагогічний колектив звертає Вашу увагу, що на період загальнодержавного карантину запроваджено дистанційну форму освіти. Нагадуємо Вам! Карантин - це не канікули! Зараз не час для розваг у громадських місцях, пікніків чи зустрічей з друзями. Виходьте з дому тільки у разі потреби. Самоізоляція - найефективніший спосіб уберегтися від захворювання. Забороніть дітям виходити з дому, відвідувати місця, де є скупчення людей. Ми повинні зробити усе, щоб зберегти себе, своїх рідних від захворювання. Бережіть здоров`я своє, дітей та рідних.
+                                </p>
+                            </article>
+
+                        </div>
+
+
+                    </div>
+                </div>
+{% endblock main_page_content %}
+
+{% block script %}
+
+{% endblock script %}

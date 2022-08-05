@@ -1,0 +1,106 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <style>
+    *, .nav_a,
+    .nav_a.active,
+    .stat__table_first-column,
+    .stat__table_second-column,
+    .footer__table_link,
+    .main__pagename-title{
+         color: {{ color }};
+    }
+    </style>
+{% endblock style %}
+
+
+
+
+
+
+
+{% block main_page_content %}
+     <div class="main__pagename _container">
+                    <h1 class="main__pagename-title">Оснащеність засобами навчання</h1>
+                </div>
+                <div class="main__info-block info-block">
+                    <div class="info-block__page_content page_content _container">
+                        <!-- <img src="../images/main/maintenanse.png" alt="maintenanse" style="width: 100%; padding: 30vh 0;"> -->
+                        <div class="page_content__article article">
+                            <article class="article">
+                                <h2 class="article__title">
+                                    Сучасні засоби навчання та технічного оснащення класів у сучасній школі
+                                </h2>
+                                <p class="article__text">
+                                    <img src="{% static 'main/images/main/osnas/interactive desk.jpg' %}" alt="desk" class="article__image">
+                                    Засоби навчання - обов'язковий елемент оснащення освітнього процесу. Поряд з цілями, змістом, формами і методами навчання засоби навчання є одним з головних компонентів дидактичної системи.
+                                </p>
+                                <p class="article__text">
+                                    Сучасне обладнання - це широкий спектр високоефективних технічних засобів навчання. Окрім комп'ютерів, які дають можливість змоделювати багато процесів і тим самим дозволяє на практиці реалізувати знання учнів, це:
+                                    <ul class="article__list">
+                                        <li class="article__list_item">цифрові проектори - для відображення комп'ютерної інформації та відео;</li>
+                                        <li class="article__list_item">проекційні екрани - різноманітних моделей;</li>
+                                        <li class="article__list_item">оверхед-проектори;</li>
+                                        <li class="article__list_item">слайд-проектори;</li>
+                                        <li class="article__list_item">копі-дошки - для тиражування записаного на дошці;</li>
+                                        <li class="article__list_item">інтерактивні дошки - можливість прямо на дошці змінювати демонстраційні електронні матеріали;</li>
+                                        <li class="article__list_item">документ-камери - настільні відеокамери для демонстрації об'єктів і слайдів за допомогою цифрового проектора;</li>
+                                        <li class="article__list_item">відеоконференційні системи - для ефективного спілкування на відстані;</li>
+                                        <li class="article__list_item">маркерні та текстильні дошки;</li>
+                                        <li class="article__list_item">проекційні столики і т.д.</li>
+                                    </ul>
+                                </p>
+                            </article>
+                        </div>
+                        <div class="page_content__stat stat">
+                            <div class="stat__title">
+                                <h2>Оснащеність засобами навчання на 2021/2022 навчальний рік</h2>
+                            </div>
+                            <table class="stat__table" id="osnas_table">
+                                {% block osnas_table %}
+                                <tr>
+                                    <td class="stat__table_first-column">Комп'ютерні класи</td>
+                                    <td class="stat__table_second-column">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Комп'ютери для навчання</td>
+                                    <td class="stat__table_second-column">28</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Цифрові проектори</td>
+                                    <td class="stat__table_second-column">4</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Проекційні екрани</td>
+                                    <td class="stat__table_second-column">4</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Маркерні та текстильні дошки</td>
+                                    <td class="stat__table_second-column">8</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Інтерактивні дошки</td>
+                                    <td class="stat__table_second-column">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Відеоконференційні системи</td>
+                                    <td class="stat__table_second-column">13</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Спортивні зали</td>
+                                    <td class="stat__table_second-column">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="stat__table_first-column">Кабінети музичного виховання</td>
+                                    <td class="stat__table_second-column">2</td>
+                                </tr>
+                                    {% endblock osnas_table %}
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+{% endblock main_page_content %}

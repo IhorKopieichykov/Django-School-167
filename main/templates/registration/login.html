@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Вхід - ХЗОШ №167</title>
+{% endblock title %}
+
+{% block navigation %}
+    <div class="header_navigation">
+                        <div class="header_navigation__menu menu">
+                            <button class="menu__dropbutton">Меню</button>
+                            <ul class="menu__nav_items">
+                                <li class="nav_item"><a href="/" class="nav_a">Головна</a></li>
+                                <li class="nav_item"><a href="/osob_navch_proc" class="nav_a">Особливості навчального процесу</a></li>
+                                <li class="nav_item"><a href="/osnas" class="nav_a">Оснащеність засобами навчання</a></li>
+                                <li class="nav_item"><a href="/vipuskniki" class="nav_a">Наші випускники</a></li>
+                                <li class="nav_item"><a href="/traditions" class="nav_a">Наші традиції</a></li>
+                                <li class="nav_item"><a href="/organization" class="nav_a">Організація дозвілля</a></li>
+                                <li class="nav_item"><a href="/osob_priyomu" class="nav_a">Особливості прийому в школу</a></li>
+                                <li class="nav_item"><a href="/test" class="nav_a">Пройти тестування</a></li>
+                        </div>
+
+                        <ul class="main_nav">
+                            <li class="nav_item"><a href="/" class="nav_a">Головна</a></li>
+                                <li class="nav_item"><a href="/osob_navch_proc" class="nav_a">Особливості навчального процесу</a></li>
+                                <li class="nav_item"><a href="/osnas" class="nav_a">Оснащеність засобами навчання</a></li>
+                                <li class="nav_item"><a href="/vipuskniki" class="nav_a">Наші випускники</a></li>
+                                <li class="nav_item"><a href="/traditions" class="nav_a">Наші традиції</a></li>
+                                <li class="nav_item"><a href="/organization" class="nav_a">Організація дозвілля</a></li>
+                                <li class="nav_item"><a href="/osob_priyomu" class="nav_a">Особливості прийому в школу</a></li>
+                                <li class="nav_item"><a href="/test" class="nav_a">Тестування</a></li>
+                        </ul>
+                    </div>
+{% endblock navigation %}
+
+
+{% block main_page_content %}
+    <div class="main__pagename _container">
+        <h1 class="main__pagename-title">Вхід</h1>
+    </div>
+    <div class="main__info-block info-block">
+        <div class="info-block__page_content page_content _container">
+            <div class="login_container">
+                {% if user.is_authenticated %}
+                    <div>Ви вже виконали вхід.</div>
+                {% else %}
+                    <form method="post" class="login_form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <input type="submit" vаluе="Войти" class="login">
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock main_page_content %}
+
+{% block script %}
+
+{% endblock script %}
+
+

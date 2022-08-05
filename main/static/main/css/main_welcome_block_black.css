@@ -1,0 +1,321 @@
+/* -------------- MAIN WELCOME BLOCK BLACK----------------------------- */
+.main__welcome-block {
+}
+.welcome-block__black{
+    background: #000;
+}
+.welcome-block {
+    height: 450px;
+    display: flex;
+    flex-direction: row;    
+}
+@media (max-width: 1280px) {
+    .welcome-block{
+        justify-content: space-between;
+    }    
+}
+@media (max-width: 992px) {
+    .welcome-block{
+        height: 400px;
+        
+    }    
+}
+@media (max-width: 830px) {
+    .welcome-block{
+        height: 280px;
+    }    
+}
+@media (max-width: 792px) {
+    .welcome-block{
+        height: 220px;
+    }    
+}
+@media (max-width: 670px) {
+    .welcome-block{
+        height: 180px;
+    }    
+}
+@media (max-width: 492px) {
+    .welcome-block{
+        height: 160px;
+    }    
+}
+@media (max-width: 370px) {
+    .welcome-block{
+        height: 120px;
+    }    
+}
+.welcome-block__image {
+    display: flex;
+    /* height: 450px;
+    width: 450px;
+    flex-shrink: 0; */
+    flex: 1 1 40%;
+    padding: 0 33px;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 792px) {
+    .welcome-block__image{
+        padding: 0 15px;
+    }
+}
+@media (max-width: 370px) {
+    .welcome-block__image{
+        display: none;
+    }
+}
+.welcome-block__photo {    
+    max-height: 383px;
+    /* height: 85%; */
+}
+@media (max-width: 992px) {
+    .welcome-block__photo{
+        max-height: 370px;
+        
+    }    
+}
+@media (max-width: 830px) {
+    .welcome-block__photo{
+        max-height: 250px;
+    }    
+}
+@media (max-width: 792px) {
+    .welcome-block__photo{
+        max-height: 200px;
+        
+    }    
+}
+@media (max-width: 670px) {
+    .welcome-block__photo{
+        max-height: 165px;
+    }    
+}
+@media (max-width: 492px) {
+    .welcome-block__photo{
+        max-height: 135px;
+    }    
+}
+
+.welcome-block__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 60%;
+}
+.welcome-block__title {
+    flex: 1 1 auto;
+    padding: 5% 0px 0px 0px;
+    font-size: 90px;
+    line-height: 120%;
+    font-weight: 900;
+    color: #fff;    
+    line-height: 135%;
+}
+@media (max-width: 992px) {
+    .welcome-block__title{
+        font-size: 80px;
+        
+    }    
+}
+@media (max-width: 830px) {
+    .welcome-block__title{
+        font-size: 60px;
+        
+    }    
+}
+@media (max-width: 792px) {
+    .welcome-block__title{
+        font-size: 47px;
+        
+    }    
+}
+@media (max-width: 670px) {
+    .welcome-block__title{
+        font-size: 35px;
+        
+    }    
+}
+@media (max-width: 492px) {
+    .welcome-block__title{
+        font-size: 30px;        
+    }    
+}
+.welcome-block__title-end {
+    flex: 1 1 auto;
+    font-size: 40px;
+    color: #45ac75;
+    font-weight: 600;
+    line-height: 145%;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+}
+@media (max-width: 1080px) {
+    .welcome-block__title-end{
+        
+        line-height: 100%;
+        margin-bottom: 14px;
+    }    
+}
+@media (max-width: 992px) {
+    .welcome-block__title-end{
+        font-size: 30px;       
+    }    
+}
+@media (max-width: 830px) {
+    .welcome-block__title-end{
+        font-size: 24px;
+    }    
+}
+@media (max-width: 792px) {
+    .welcome-block__title-end{
+        font-size: 20px;
+    }    
+}
+@media (max-width: 709px) {
+    .welcome-block__title-end{
+        font-size: 16px;
+        margin-bottom: 12px;
+    }    
+}
+@media (max-width: 492px) {
+    .welcome-block__title-end{
+        font-size: 13px;
+        margin-bottom: 8px;
+    }    
+}
+.welcome-block__title-link {    
+    text-decoration: none;    
+    padding: 10px 20px;
+    margin-bottom: 5%;
+    font-size: 25px;
+    color: #000;
+    background-color: #45ac75;
+    border-radius: 5px;
+    font-weight: bold;
+    transition-property: all;
+    transition-duration: .5s;
+}
+@media (max-width: 992px) {
+    .welcome-block__title-link{
+        font-size: 24px;
+        padding: 8px 16px;
+    }    
+}
+@media (max-width: 830px) {
+    .welcome-block__title-link{
+        font-size: 20px;
+        padding: 6px 12px;
+    }    
+}
+@media (max-width: 792px) {
+    .welcome-block__title-link{
+        font-size: 16px;
+        padding: 4px 8px;
+    }    
+}
+@media (max-width: 709px) {
+    .welcome-block__title-link{
+        font-size: 14px;
+        padding: 3px 6px;
+    }    
+}
+@media (max-width: 492px) {
+    .welcome-block__title-link{
+        font-size: 12px;
+        padding: 3px 6px;
+    }    
+}
+.welcome-block__title-link:hover {
+    color: #fff;
+    background-color: #2acb75;
+    /* border-radius: 14px; */
+    box-shadow: 0 0 100px white;
+    box-shadow: inset 0 0 10px black;
+}
+@media (max-width: 992px) {
+    .welcome-block__title-link:hover{
+        border-radius: 10px;
+    }    
+}
+@media (max-width: 830px) {
+    .welcome-block__title-link:hover{
+        border-radius: 7px;
+    }    
+}
+@media (max-width: 792px) {
+    .welcome-block__title-link:hover{
+        border-radius: 5px;
+    }    
+}
+@media (max-width: 670px) {
+    .welcome-block__title-link:hover{
+        border-radius: 3px;
+    }    
+}
+@media (max-width: 492px) {
+    .welcome-block__title-link:hover{
+        border-radius: 3px;
+    }    
+}
+.welcome-block__images {
+     /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+    flex: 0 1 0;
+}
+@media (max-width:1280px) {    
+    .welcome-block__images{
+        display: none;    
+    }
+}
+@media (max-width: 792px) {    
+    .welcome-block__images{
+        display: block;    
+    }
+}
+@media (max-width: 593px) {    
+    .welcome-block__images{
+        display: none;    
+    }
+}
+.welcome-block__shape_1 {    
+    position: relative;
+    right: 20%;
+    top: 0;
+    height: 150px;
+    margin: 15px;
+}
+@media (max-width: 792px) {    
+    .welcome-block__shape_1{
+        height: 90px;  
+        right: 50%;
+    }
+}
+@media (max-width: 670px) {    
+    .welcome-block__shape_1{
+        height: 70px;  
+        right: 15%;
+    }
+}
+.welcome-block__shape_2 {
+    position: relative;
+    top: 30%;
+    left: 30%; 
+    height: 100px;
+    margin: 15px;
+}
+@media (max-width: 792px) {    
+    .welcome-block__shape_2{
+        height: 40px;
+        top: 15%;
+        left: 20%;   
+    }
+}
+@media (max-width: 670px) {    
+    .welcome-block__shape_2{
+        height: 40px;
+        top: 10%;
+        left: 30%;   
+    }
+}

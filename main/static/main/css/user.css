@@ -1,0 +1,100 @@
+.user_container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.user_info{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.user_photo-block{
+    padding: 10px 20px;
+    border: 3px solid black;
+    border-radius: 15px;
+    flex: 0 0 100px;
+    background-color: #C0C1C2;
+}
+.user_photo{
+    max-width: 100px;
+}
+.user_name-block{
+    padding: 10px 20px;
+    flex-grow: 1;
+}
+.user_name{
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 0px 10px 5px 5px;
+    border-bottom: 3px solid black;
+}
+.user_logout-block{
+    padding: 20px;
+}
+.user_logout_link{
+    padding: 5px 20px;
+    font-size: inherit;
+    color: #ffffff;
+    background-color: #000;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all .5s;
+    border: black solid 1px;
+    box-shadow: 2px 2px 5px #000;
+}
+.user_logout_link:hover {
+    transition: all .5s;
+    color: #000;
+    background-color: #fff;
+    box-shadow: inset 0 0 20px black;
+    border: black solid 1px;
+    cursor: pointer;
+}
+
+.user_results-of-test{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.results-of-test_title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+.results-of-test_table user_table_res{
+
+}
+.user_table_res_row{
+
+}
+.user_table_res_cell{
+    padding: 10px;
+    min-width: 150px;
+}
+.table_res_childname{
+    font-size: 20px;
+}
+.table_res_edit_name_button{
+    background-color: burlywood;
+}
+.table_res_delete_child_button{
+    background-color: crimson;
+}
+.user_table_res_cell button{
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    border: black solid 2px;
+    border-radius: 3px;
+    padding: 2px 5px;
+    box-shadow: 5px 5px 5px #000;
+    transition-property: all;
+    transition-duration: .5s;
+}
+.user_table_res_cell button:hover{
+    box-shadow: inset 2px 2px 5px black;
+    cursor: pointer;
+}
+

@@ -1,0 +1,14 @@
+
+/*-------------   CONTAINER  -----------------------------------------  */
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+._container{
+    max-width: 1346px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: content-box;
+}

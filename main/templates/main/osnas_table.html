@@ -1,0 +1,27 @@
+{% extends 'main/osnas.html' %}
+{% load static %}
+
+{% block style %}
+    <style>
+    *, .nav_a,
+    .nav_a.active,
+    .stat__table_first-column,
+    .stat__table_second-column,
+    .footer__table_link,
+    .main__pagename-title{
+         color: {{ color }};
+    }
+    </style>
+{% endblock style %}
+
+{% block osnas_table %}
+    {% for key, value in dict.items %}
+        <tr>
+            <td class="stat__table_first-column">{{ key }}</td>
+            <td class="stat__table_second-column">{{ value }}</td>
+        </tr>
+    {% endfor %}
+{% endblock osnas_table %}
+
+
+# ?доски%20обычные=500%20штук&тетради=1200&принтеры=5&интерактивные%20доски=2

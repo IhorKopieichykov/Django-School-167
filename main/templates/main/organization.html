@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block main_page_content %}
+    <div class="main__pagename _container">
+                    <h1 class="main__pagename-title">Організація дозвілля</h1>
+                </div>
+                <div class="main__info-block info-block">
+                    <div class="info-block__page_content page_content _container">
+
+                        <div class="slider">
+                            <div class="slider_window">
+                                <div class="slider_track">
+                                        <img src="{% static 'main/images/main/organization/slider/01.jpg' %}" alt="photo" class="slider_image">
+                                        <img src="{% static 'main/images/main/organization/slider/02.jpg' %}" alt="photo" class="slider_image">
+                                        <img src="{% static 'main/images/main/organization/slider/03.jpg' %}" alt="photo" class="slider_image">
+                                        <img src="{% static 'main/images/main/organization/slider/04.jpg' %}" alt="photo" class="slider_image">
+                                        <img src="{% static 'main/images/main/organization/slider/05.jpg' %}" alt="photo" class="slider_image">
+                                </div>
+
+                                <div class="slider_buttons">
+                                    <button class="slider_button_prev">&#60;</button>
+                                    <button class="slider_button_next">&#62;</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- <img src="../images/main/maintenanse.png" alt="maintenanse" style="width: 100%; padding: 30vh 0;"> -->
+
+
+                    </div>
+                </div>
+{% endblock main_page_content %}
+
+{% block script %}
+    <script src="{% static 'main/js/slider.js' %}" type="text/javascript"></script>
+{% endblock script %}

@@ -1,0 +1,92 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Особистий кабінет - ХЗОШ №167</title>
+{% endblock title %}
+
+
+{% block main_page_content %}
+    <div class="main__pagename _container">
+        <h1 class="main__pagename-title">Особистий кабінет</h1>
+    </div>
+    <div class="main__info-block info-block">
+        <div class="info-block__page_content page_content _container">
+            <div class="user_container user">
+                <div class="user_info">
+                    <div class="user_photo-block">
+                        <img src="{% static 'main/images/header/user.png' %}" alt="user_photo" class="user_photo">
+                    </div>
+                    <div class="user_name-block">
+                        <h2 class="user_name">{{ user.get_full_name }}</h2>
+                    </div>
+                    <div class="user_logout-block">
+                        <a href="{% url 'logout' %}" class="user_logout_link">Вийти</a>
+                    </div>
+                </div>
+            {% block user_results-of-test %}
+                {% if user.is_staff %}
+                <div class="user_results-of-test">
+                    <h3 class="results-of-test_title">Список користувачів</h3>
+                    <table class="results-of-test_table user_table_res">
+                        {% for user in users %}
+                            <tr class="user_table_res_row">
+                                <td class="user_table_res_cell">
+                                    <a href="{% url 'user_childs' user.pk %}" class="table_res_childname">{{ user.get_full_name }}</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+{#                            <td class="user_table_res_cell">#}
+{#                                <button class="table_res_edit_name_button">Редагувати ім'я</button>#}
+{#                            </td>#}
+{#                            <td class="user_table_res_cell">#}
+{#                                <button class="table_res_delete_child_button">Видалити</button>#}
+{#                            </td>#}
+                    </table>
+                </div>
+                    {% else %}
+                    <div class="user_results-of-test">
+                        <h3 class="results-of-test_title">Мої діти</h3>
+                        <table class="results-of-test_table user_table_res">
+                                <tr class="user_table_res_row">
+                                    <td class="user_table_res_cell">
+                                       <span class="table_res_childname" style="font-weight: bold;">Ім'я дитини</span>
+                                    </td>
+                                    <td class="user_table_res_cell">
+                                        <span class="table_res_childname" style="font-weight: bold;">Дата народження</span>
+                                    </td>
+                                </tr>
+                            {% for child in childs %}
+                                {% if child.parent.id == user.pk %}
+                                <tr class="user_table_res_row">
+                                    <td class="user_table_res_cell">
+                                        <a href="{% url 'user_child_results' user.pk child.pk %}" class="table_res_childname">{{ child.childname }}</a>
+                                    </td>
+                                    <td class="user_table_res_cell">
+                                        <span class="table_res_childname">{{ child.date_of_birth }}</span>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endif %}
+            {% endblock user_results-of-test %}
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock main_page_content %}
+
+{% block script %}
+
+{% endblock script %}
+
+

@@ -1,0 +1,37 @@
+/* ОБНУЛЕНИЕ СТИЛЕЙ ----------------------------------*/
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+html,body{  
+    height: 100%;
+    line-height: 1;
+    font-size: 15px;
+    color: black;
+    font-family: 'PT Sans', sans-serif;
+    background: url("../images/main/background.png");
+    background-attachment: fixed;
+    background-size: 100% auto;
+}
+a{
+  text-decoration: none;
+}
+ul,ol,li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    overflow: inherit;
+}
+input, button, textarea{
+    font-family: inherit;
+}
